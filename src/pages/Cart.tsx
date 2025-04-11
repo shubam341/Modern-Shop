@@ -12,7 +12,7 @@ export default function Cart() {
     setIsCheckingOut(true);
     setOrderStatus('processing');
     
-    // Simulate order processing stages
+    
     setTimeout(() => {
       setOrderStatus('confirmed');
       setTimeout(() => {
