@@ -27,11 +27,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         username,
         password,
       });
+  
+      console.log('API response:', response.data); // ADD THIS
+  
       setToken(response.data.token);
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Login failed:', error.response?.data || error.message); // ADD THIS
       throw new Error('Invalid credentials');
     }
   };
+  
 
   const logout = () => {
     setToken(null);
